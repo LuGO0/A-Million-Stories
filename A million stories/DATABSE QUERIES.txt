@@ -1,0 +1,63 @@
+create database _DB;
+use _DB;
+create table users(id varchar(5) primary key not null,phone varchar(15) unique ,mail varchar(50) unique,first varchar(15) , last varchar(15) ,date_created date not null);
+
+CREATE TABLE authentication(id varchar(5) PRIMARY key not null,pass varchar(20) not null , FOREIGN key(id) REFERENCES users(id));
+
+CREATE TABLE feedback(id varchar(5)  not null,feedback text not null ,date_of_feedback date not null,PRIMARY key(id,date_of_feedback), FOREIGN key(id) REFERENCES users(id));
+
+CREATE TABLE post(id varchar(5) not null,post_id int(10) not null AUTO_INCREMENT,date_of_post date not null,user_post text not null,PRIMARY KEY(id,post_id), FOREIGN key(id) REFERENCES users(id));
+
+CREATE TABLE reaction(reaction_id varchar(5) not null,post_id int(10) not null,reaction_emo text not null,PRIMARY KEY(post_id,reaction_id), FOREIGN key(post_id) REFERENCES post(post_id),FOREIGN KEY(reaction_id) REFERENCES users(id));
+
+
+CREATE TABLE admirers(user_id_admirer varchar(5) not null,user_id_admired varchar(5) not null,PRIMARY KEY(user_id_admirer,user_id_admired), FOREIGN key(user_id_admirer) REFERENCES users(id),FOREIGN KEY(user_id_admired) REFERENCES users(id));
+
+
+CREATE TABLE postComments(
+post_id INT(10) not null,
+    comment_id VARCHAR(5) not null,
+    comment_text text not null,
+    
+    PRIMARY KEY(post_id,comment_id),
+    FOREIGN KEY(post_id) REFERENCES post(post_id) ON DELETE CASCADE
+    
+    
+);
+//INSERION OF USERS
+
+
+
+INSERT INTO users VALUES
+('A0000', '+919876543210', 'abcd0@xyz.com', 'fname0', 'lname0', '2018-11-25'),('A0001', '+919876543211', 'abcd1@xyz.com', 'fname1', 'lname1', '2018-11-25'),
+('A0002', '+919876543212', 'abcd2@xyz.com', 'fname2', 'lname2', '2018-11-25'),
+('A0003', '+919876543213', 'abcd3@xyz.com', 'fname3', 'lname3', '2018-11-25'),
+('A0004', '+919876543214', 'abcd4@xyz.com', 'fname4', 'lname4', '2018-11-25');
+
+//INSERTION OF ADMIRERS
+
+
+
+INSERT INTO admirers VALUES
+('A0000', 'A0001'),
+('A0000', 'A0002'),
+('A0001', 'A0000'),
+('A0002', 'A0001');
+
+//INSERTION OF AUTHENTICATION
+
+INSERT INTO authentication VALUES ('A0000','password0'),('A0001','password1'),('A0002','password2'),('A0003','password3'),('A0004','password4');
+
+//INSERTION OF FEEDBACK
+
+INSERT INTO feedback VALUES ('A0000','Very Good Platform','2018-11-25');
+
+//INSERTION OF POST
+
+INSERT INTO post VALUES ('A0000','P000000000','2018-11-25','Had good Dinner..'),('A0001','P000000001','2018-11-25','Had good lunch..'), ('A0002','P000000002','2018-11-25','Had good Breakfast..');
+
+
+
+//ADDING TABLE
+ ALTER TABLE users 
+ ADD column gender VARCHAR(2);

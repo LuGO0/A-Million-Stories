@@ -1,0 +1,14 @@
+
+1 . building up database { basic }
+
+2 . building up a basic UI
+
+3 . debugging and adding features and more entities to the database
+
+
+3.5 adding triggers and checks and assertions and creating views and giving permissions and finalisng the DB 
+
+
+4 . advancing the UI
+
+5 . if time adding messaging system 
