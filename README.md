@@ -1,4 +1,4 @@
-# php-mysql-projs
+# A-Million-Stories
 ## A webspace catalogue for stories 
 
 * To contribute just clone the repo inside local wamp server folder and get in sync with the progress,
