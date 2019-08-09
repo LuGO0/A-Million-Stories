@@ -6,21 +6,23 @@
      position: absolute;
      background-color: lightpink;
      color: black;
-	 width:200px;
+	 width:970px;
 	 height:200px;
-	 margin-top : 109px;
+	 margin-top : 1px;
 	 margin-left : 80px;
 	 border-radius: 50px;
 	 padding: 20px;
 }
 .white-box2{
+	position :absolute;
 background-color: lightgreen;
     color: black;
-	 width:800px;
+	 width:700px;
 	 height:500px;
-	 margin-left: 210px;
+	 margin-left: 250px;
 	 border-radius: 50px;
-	 padding: 20px;   
+	 padding: 20px;
+     margin-top:0px;	 
 }
 .butt{
 position: relative;
@@ -40,7 +42,7 @@ position: relative;
 }
 
 body{
-	background:url("b1.jpg");
+	background:url("Images/b1.jpg");
 }
 
 
@@ -121,12 +123,12 @@ if(isset($_SESSION['isAuthenticated']) && $_SESSION['isAuthenticated'] == 1){
 	$userInfo=mysql_fetch_array($results);
 			
     if($userInfo['gender']=='M')
-		echo "<img src='pr.jpg'/>";
+		echo "<img height='150px' width='150px' src='pr.jpg'/>";
 	if($userInfo['gender']=='F')
-		echo "<img src='pr2.jpg'/>";
+		echo "<img height='150px' width='150px' src='pr2.jpg'/>";
 	
-	echo "<br/> ";
-	echo $userInfo['first']." ".$userInfo['last']."<br/>"."@".$userInfo['id'];
+
+	echo $userInfo['first']." ".$userInfo['last']."                         userID  "."@".$userInfo['id'];
 		
 	//echo 'Thank You For Your FeedBack! ';
 	}
@@ -143,7 +145,6 @@ exit();
 
 //Check if the user is authenticated first. Or else redirect to login page 
 if(isset($_SESSION['isAuthenticated']) && $_SESSION['isAuthenticated'] == 1){ 
-    $count=0;
 	$validationFlag = true; 
 	//Check all the required fields are filled 
 	 
@@ -161,13 +162,9 @@ if(isset($_SESSION['isAuthenticated']) && $_SESSION['isAuthenticated'] == 1){
 	die("Unable to select database"); 
 	} 
 	
-	if($count++==0)
-	{
-		$_SESSION['prevPostId']=0;
-	}
+	
 	//Create Insert query 
-	$query = "Select * from post where id='".$_SESSION['userId']."' OR id IN (Select user_id_admired from admirers where user_id_admirer='".$_SESSION['userId']."' AND post_id > '".++$_SESSION['prevPostId']."'
-	)Limit 1" ;
+	$query = "Select * from post limit 5";
 	//Execute query 
 	
 	$results = mysql_query($query); 
@@ -178,11 +175,15 @@ if(isset($_SESSION['isAuthenticated']) && $_SESSION['isAuthenticated'] == 1){
 }
 	else 
 	{
-	$userInfo=mysql_fetch_array($results);
-	$_SESSION['prevPostId']=$userInfo['post_id'];
+	while($userInfo=mysql_fetch_assoc($results)){
+	//$_SESSION['prevPostId']=$userInfo['post_id'];
 	echo $userInfo['id'];
+	echo "<br><br>"."#DATE ";
 	echo $userInfo['date_of_post'];
+	echo "<br>";
 	echo $userInfo['user_post'];
+	echo "<br><br>";
+	echo "<br/>";}
 	
 			
 
@@ -202,17 +203,10 @@ exit();
 
 <div class = "butt">
 <form method="POST" action="UIHome.php">
+<input type="hidden" value="" name="postId">
  <button class="butt1" type="submit">NEXT </button></form>
 </div>
 
-<div class="dropdown">
-  <button class="dropbtn">REACT</button>
-  <div class="dropdown-content">
-    <a href="#">HAPPY</a>
-    <a href="#">I WISH IT</a>
-    <a href="#">SAD</a>
-  </div>
-</div>
 
 
 </body>

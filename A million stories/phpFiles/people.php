@@ -18,7 +18,7 @@ botton{
 	margin-left:2p;
 }
 body{
-	background-image: url("b1.jpg");
+	background-image: url("Images/b1.jpg");
 }
 
 </style>

@@ -2,7 +2,7 @@
 <head>
 <style type="text/css">
 body { 
-      background-image: url("WebsiteHomeBack.png");
+      background-image: url("Images/WebsiteHomeBack.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;  

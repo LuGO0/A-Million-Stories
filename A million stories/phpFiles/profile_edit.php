@@ -39,7 +39,7 @@ button:hover, a:hover {
     opacity: 0.7;
 }
 body{
-	background-image : url("b1.jpg");
+	background-image : url("Images/b1.jpg");
 }
 .h{
     font-style: italic;
@@ -60,7 +60,7 @@ body{
 
 <div class="card">
 <br><br>
-<img class="pro" src="pr.jpg" alt="check">
+<img class="pro" src="Images/pr.jpg" alt="check">
   <br>
   <label>First Name -</label> <input type="text" name="fname" value="" size="45px"><br><br>
   <label>Last Name -</label> <input type="text" name="lname" value="" size="45px">

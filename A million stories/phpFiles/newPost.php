@@ -1,7 +1,7 @@
 <html>
 <style>
 body{
-	background-image: url("b1.jpg");
+	background-image: url("Images/b1.jpg");
 }
 .butt1{
 	background-color: #4CAF50;

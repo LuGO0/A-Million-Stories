@@ -5,7 +5,7 @@
          display: inline-block;
     }
 	body{
-	background-image : url("b1.jpg");
+	background-image : url("Images/b1.jpg");
 }
 
 .card {

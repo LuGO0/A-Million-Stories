@@ -7,7 +7,7 @@
 	font-style: italic;
 }
 body{
-	background: url("b1.jpg");
+	background: url("Images/b1.jpg");
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);

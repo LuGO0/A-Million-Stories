@@ -38,7 +38,7 @@ button:hover, a:hover {
     opacity: 0.7;
 }
 body{
-	background-image : url("b1.jpg");
+	background-image : url("Images/b1.jpg");
 }
 .h{
     font-style: italic;
@@ -106,7 +106,7 @@ exit();
 
 <div class="card">
 <br><br>
- <img class="pro" src="pr.jpg" alt="check">
+ <img class="pro" src="Images/pr.jpg" alt="check">
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <h2><h2/> <?php echo $userInfo['first']." ".$userInfo['last'] ?>
   <p>Gender - <?php echo $userInfo['gender']?> </p>

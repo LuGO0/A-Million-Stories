@@ -47,7 +47,7 @@ button:hover, a:hover {
 	
 }
 body{
-	background-image : url("b1.jpg");
+	background-image : url("Images/b1.jpg");
 }
 .f{
 	color: green;

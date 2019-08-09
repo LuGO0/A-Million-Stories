@@ -57,7 +57,7 @@ button:hover, a:hover {
     opacity: 0.7;
 }
 body{
-	background-image : url("b1.jpg");
+	background-image : url("Images/b1.jpg");
 }
 .h{
     font-style: italic;
